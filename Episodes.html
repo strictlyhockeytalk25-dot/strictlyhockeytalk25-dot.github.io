@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodes | Strictly Hockey Talk</title>
+    <style>
+        /* Hockey Themed Color Palette & Global Styles */
+        :root {
+            --ice-blue: #f0f4f8;
+            --puck-dark: #1a252c;
+            --goal-red: #d9383a;
+            --rink-line: #4a90e2;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--puck-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--puck-dark);
+            padding: 1rem 2rem;
+            border-bottom: 4px solid var(--goal-red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: var(--text-light);
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background-color: var(--goal-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a252ca0, #1a252c), url('https://images.unsplash.com/photo-1515523110800-9415d13b84a8?q=80&w=1200') center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 2px dashed var(--rink-line);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Video Grid Layout */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Video Card Styling */
+        .video-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--rink-line);
+            transition: transform 0.2s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--goal-red);
+        }
+
+        /* Responsive Video Container (Maintains 16:9 Aspect Ratio) */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: var(--puck-dark);
+        }
+
+        .video-info p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #5a6b75;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav>
+        <div class="logo">🏒 Strictly Hockey Talk</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="episodes.html" style="background-color: var(--goal-red);">Episodes</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Headline Section -->
+    <header class="hero">
+        <h1>Latest Episodes</h1>
+    </header>
+
+    <!-- Video Grid -->
+    <main class="container">
+        <div class="video-grid">
+
+            <!-- VIDEO CARD 1 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace VIDEO_ID_1 with your actual YouTube video ID -->
+                    <iframe src="https://youtu.be/n9yK3CU5tsY" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>What the Canucks Can Learn from the Carolina Hurricanes</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <!-- VIDEO CARD 2 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace VIDEO_ID_2 with your actual YouTube video ID -->
+                    <iframe src="https://youtu.be/uK9HunMNxnU" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Stanley Cup Finals & Mike Babcock to the Oilers?</h3>
+                    <p></p>
+                </div>
+            </div>
+
+            <!-- VIDEO CARD 3 -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace VIDEO_ID_3 with your actual YouTube video ID -->
+                    <iframe src="https://youtu.be/2dKVoopjDnM" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Stanley Cup Final & Canucks Hire Manny Malhotra | Ft. Jim Biringer Interview</h3>
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Strictly Hockey Talk. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
