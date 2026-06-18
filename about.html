@@ -1,176 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Strictly Hockey Talk Podcast</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Strictly Hockey Talk</title>
+    <style>
+        /* Hockey Themed Color Palette & Global Styles */
+        :root {
+            --ice-blue: #f0f4f8;
+            --puck-dark: #1a252c;
+            --goal-red: #d9383a;
+            --rink-line: #4a90e2;
+            --text-light: #ffffff;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b0f19;
-  color: white;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--ice-blue);
+            color: var(--puck-dark);
+            line-height: 1.6;
+        }
 
-header {
-  background: linear-gradient(90deg, #00aaff, #111);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        /* Navigation Bar */
+        nav {
+            background-color: var(--puck-dark);
+            padding: 1rem 2rem;
+            border-bottom: 4px solid var(--goal-red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-}
+        nav .logo {
+            color: var(--text-light);
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-nav a {
-  color: white;
-  margin-left: 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
 
-.hero {
-  background:
-    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-    url('https://images.unsplash.com/photo-1515703407324-5f753afd8be8?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  text-align: center;
-}
+        nav a:hover {
+            background-color: var(--goal-red);
+        }
 
-.hero h2 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a252ca0, #1a252c), url('https://images.unsplash.com/photo-1515523110800-9415d13b84a8?q=80&w=1200') center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 5rem 2rem;
+            border-bottom: 2px dashed var(--rink-line);
+        }
 
-.hero p {
-  font-size: 20px;
-}
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 50px 20px;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
 
-.card {
-  background: #161b2c;
-  padding: 30px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-}
+        /* Main Content Container */
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
 
-.card h3 {
-  color: #4db8ff;
-  margin-top: 0;
-}
+        /* Bio Section Card */
+        .bio-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--rink-line);
+            margin-bottom: 2rem;
+        }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
-}
+        .bio-card h2 {
+            margin-top: 0;
+            color: var(--puck-dark);
+            border-bottom: 2px solid var(--ice-blue);
+            padding-bottom: 0.5rem;
+        }
 
-.feature-box {
-  background: #111827;
-  padding: 25px;
-  border-radius: 10px;
-  text-align: center;
-}
+        /* Media Links Grid */
+        .links-heading {
+            margin-top: 2.5rem;
+            color: var(--puck-dark);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.feature-box h2 {
-  margin: 0;
-  font-size: 42px;
-}
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
 
-footer {
-  background: black;
-  text-align: center;
-  padding: 20px;
-}
-</style>
+        .media-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--puck-dark);
+            color: var(--text-light);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            border-bottom: 4px solid var(--rink-line);
+            font-weight: 700;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .media-link:hover {
+            background-color: var(--goal-red);
+            border-bottom-color: var(--puck-dark);
+            transform: translateY(-3px);
+        }
+
+        .media-link .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-link .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>🏒 STRICTLY HOCKEY TALK PODCAST</h1>
+    <!-- Top Navigation -->
+    <nav>
+        <div class="logo">🏒 Strictly Hockey Talk</div>
+        <div>
+            <a href="index.html">Home</a>
+          
+            <a href="about.html" style="background-color: var(--goal-red);">About</a>
+        </div>
+    </nav>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="episodes.html">Episodes</a>
-    <a href="shop.html">Merch</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+    <!-- Hero / Headline Section -->
+    <header class="hero">
+        <h1>Behind the Bench</h1>
+        <p>Talking matchups, management breakdowns, and deep-dive analysis on everything happening across the league.</p>
+    </header>
 
-<section class="hero">
-  <h2>ABOUT THE PODCAST</h2>
-  <p>Hockey News • Analysis • Debate • Passion</p>
-</section>
+    <!-- Main Content -->
+    <main class="container">
+        <section class="bio-card">
+            <h2>Strictly Hockey Talk</h2>
+            <p>Welcome. Strictly Hockey Talk Podcast delivers hockey coverage for fans who love the game. Every episode focuses on the biggest stories around the league, from trade rumours to player performances and championship contenders.
 
-<section class="section">
+We aim to create a community where hockey fans can stay informed, hear different perspectives, and enjoy great conversations about the sport.</p>
+            
+            <p>FIX THIS LATER.</p>
 
-  <div class="card">
-    <h3>🏒 Our Mission</h3>
+            <h3 class="links-heading">Join the Community</h3>
+            
+            <div class="links-grid">
+                <a href="https://open.spotify.com/show/4354sD9RBRBkAprAGcC2Ox" target="_blank" class="media-link">
+                    <span class="icon">🎙️</span>
+                    <span class="label">Podcast</span>
+                </a>
+                
+                <a href="https://www.youtube.com/@StrictlyHockeyTalk" target="_blank" class="media-link">
+                    <span class="icon">📺</span>
+                    <span class="label">YouTube</span>
+                </a>
+                
+                <a href="https://x.com/SCTShow" target="_blank" class="media-link">
+                    <span class="icon">🐦</span>
+                    <span class="label">Twitter / X</span>
+                </a>
+                
+                <a href="#" target="_blank" class="media-link">
+                    <span class="icon">👕</span>
+                    <span class="label">Merch Store COMING SOON</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
-    <p>
-      Strictly Hockey Talk Podcast delivers hockey coverage for fans who
-      love the game. Every episode focuses on the biggest
-      stories around the league, from blockbuster trades and
-      playoff races to player performances and championship
-      contenders.
-    </p>
-
-    <p>
-      We aim to create a community where hockey fans can stay
-      informed, hear different perspectives, and enjoy great
-      conversations about the sport.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>🥅 What We Cover</h3>
-
-    <p>
-      • NHL News & Rumours<br>
-      • Trade Deadline Analysis<br>
-      • Playoff Predictions<br>
-      • Team Power Rankings<br>
-      • Prospect Watch<br>
-      • Stanley Cup Coverage
-    </p>
-  </div>
-
-  <div class="grid">
-
-    <div class="feature-box">
-      <h2>🏒</h2>
-      <p>Podcast</p>
-    </div>
-
-    <div class="feature-box">
-      <h2>🎙️</h2>
-      <p>YouTube Clips</p>
-    </div>
-
-    <div class="feature-box">
-      <h2>🥅</h2>
-      <p>Merch</p>
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-  <p>© 2025 Strictly Hockey Talk Podcast</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Strictly Hockey Talk. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
